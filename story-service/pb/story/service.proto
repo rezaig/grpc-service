@@ -1,0 +1,11 @@
+syntax = "proto3";
+package pb.story;
+option go_package = "pb/story";
+
+import "pb/story/general.proto";
+import "pb/story/story.proto";
+
+service StoryService {
+  rpc FindByID(FindByIDRequest) returns (Story);
+  rpc FindAll(FindAllRequest) returns (Stories);
+}
